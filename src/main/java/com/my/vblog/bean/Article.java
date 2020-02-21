@@ -2,6 +2,7 @@ package com.my.vblog.bean;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.apache.ibatis.type.Alias;
 
 import java.sql.Timestamp;
 import java.util.List;
@@ -11,6 +12,7 @@ import java.util.List;
  */
 @Getter
 @Setter
+@Alias("Article")
 public class Article {
     private Long id;
     private String title;

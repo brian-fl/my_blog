@@ -1,5 +1,6 @@
 package com.my.vblog.bean;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,6 +12,7 @@ import lombok.Setter;
  */
 @Getter
 @Setter
+@AllArgsConstructor
 public class RespBean {
     private String status;
     private String msg;
