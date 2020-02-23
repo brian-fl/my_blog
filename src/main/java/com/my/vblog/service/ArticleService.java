@@ -120,4 +120,12 @@ public class ArticleService {
     public int restoreArticle(Integer articleId) {
         return articleMapper.updateArticleStateById(articleId, 1);// 从回收站还原在原处
     }
+
+    public List<String> getCategories() {
+        return articleMapper.getCategories(Util.getCurrentUser().getId());
+    }
+
+    public List<Integer> getDataStatistics() {
+        return articleMapper.getDataStatistics(Util.getCurrentUser().getId());
+    }
 }

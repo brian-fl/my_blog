@@ -31,4 +31,8 @@ public interface ArticleMapper {
     int updateArticleState(@Param("aids") Long[] aids, @Param("state") Integer state);
 
     int updateArticleStateById(@Param("articleId") Integer articleId, @Param("state") Integer state);
+
+    List<String> getCategories(Long id);
+
+    List<Integer> getDataStatistics(Long id);
 }
