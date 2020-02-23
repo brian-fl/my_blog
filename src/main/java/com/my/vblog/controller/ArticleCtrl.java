@@ -48,4 +48,12 @@ public class ArticleCtrl {
     public Article getArticleById(@PathVariable Long aid) {
         return articleService.getArticleById(aid);
     }
+
+    @PutMapping("/dustbin")
+    public RespBean updateArticleState(Long[] aids, Integer state) {
+        if (articleService.updateArticleState(aids, state) == aids.length) {
+            return new RespBean("success", "删除成功！");
+        }
+        return new RespBean("error", "删除失败！");
+    }
 }

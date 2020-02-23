@@ -77,4 +77,18 @@
     <update id="pvIncrement" parameterType="Long">
         UPDATE article set pageView=pageView+1 WHERE id=#{aid}
     </update>
+
+    <delete id="deleteArticleById">
+        DELETE FROM article WHERE id IN
+        <foreach collection="aids" item="aid" open="(" close=")" separator=",">
+            #{aid}
+        </foreach>
+    </delete>
+
+    <update id="updateArticleState">
+        UPDATE article SET state=#{state} WHERE id IN
+        <foreach collection="aids" item="aid" separator="," open="(" close=")">
+            #{aid}
+        </foreach>
+    </update>
 </mapper>

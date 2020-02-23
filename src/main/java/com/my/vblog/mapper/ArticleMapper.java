@@ -25,4 +25,8 @@ public interface ArticleMapper {
     Article getArticleById(Long aid);
 
     void pvIncrement(Long aid);
+
+    int deleteArticleById(@Param("aids") Long[] aids);
+
+    int updateArticleState(@Param("aids") Long[] aids, @Param("state") Integer state);
 }

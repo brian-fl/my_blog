@@ -108,4 +108,12 @@ public class ArticleService {
         articleMapper.pvIncrement(aid);
         return article;
     }
+
+    public int updateArticleState(Long[] aids, Integer state) {
+        if (state == 2) {
+            return articleMapper.deleteArticleById(aids);
+        } else {
+            return articleMapper.updateArticleState(aids, 2);//放入到回收站中
+        }
+    }
 }
