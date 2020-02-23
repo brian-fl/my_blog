@@ -91,4 +91,8 @@
             #{aid}
         </foreach>
     </update>
+
+    <update id="updateArticleStateById" >
+        UPDATE article SET state=#{state} WHERE id = #{articleId}
+    </update>
 </mapper>

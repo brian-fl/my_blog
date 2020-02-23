@@ -116,4 +116,8 @@ public class ArticleService {
             return articleMapper.updateArticleState(aids, 2);//放入到回收站中
         }
     }
+
+    public int restoreArticle(Integer articleId) {
+        return articleMapper.updateArticleStateById(articleId, 1);// 从回收站还原在原处
+    }
 }

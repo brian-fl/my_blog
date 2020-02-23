@@ -56,4 +56,12 @@ public class ArticleCtrl {
         }
         return new RespBean("error", "删除失败！");
     }
+
+    @PutMapping("/restore")
+    public RespBean restoreArticle(Integer articleId) {
+        if (articleService.restoreArticle(articleId) == 1) {
+            return new RespBean("success", "还原成功！");
+        }
+        return new RespBean("error", "还原失败！");
+    }
 }
