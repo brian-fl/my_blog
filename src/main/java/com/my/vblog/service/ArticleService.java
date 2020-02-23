@@ -91,4 +91,15 @@ public class ArticleService {
         content = content.replaceAll("\\<.*?>", "");
         return content;
     }
+
+    public int getArticleCountByState(Integer state, Long uid, String keywords) {
+        return articleMapper.getArticleCountByState(state, uid, keywords);
+    }
+
+    public List<Article> getArticleByState(Integer state, Integer page, Integer count, String keywords) {
+        int start = (page - 1) * count;
+        Long uid = Util.getCurrentUser().getId();
+        return articleMapper.getArticleByState(state, start, count, uid, keywords);
+
+    }
 }
