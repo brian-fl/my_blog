@@ -102,4 +102,10 @@ public class ArticleService {
         return articleMapper.getArticleByState(state, start, count, uid, keywords);
 
     }
+
+    public Article getArticleById(Long aid) {
+        Article article = articleMapper.getArticleById(aid);
+        articleMapper.pvIncrement(aid);
+        return article;
+    }
 }

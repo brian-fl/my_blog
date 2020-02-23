@@ -43,4 +43,9 @@ public class ArticleCtrl {
         map.put("articles", articles);
         return map;
     }
+
+    @GetMapping("/{aid}")
+    public Article getArticleById(@PathVariable Long aid) {
+        return articleService.getArticleById(aid);
+    }
 }

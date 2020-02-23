@@ -21,4 +21,8 @@ public interface ArticleMapper {
     int getArticleCountByState(@Param("state") Integer state, @Param("uid") Long uid, @Param("keywords") String keywords);
 
     List<Article> getArticleByState(@Param("state") Integer state, @Param("start") int start, @Param("count") Integer count, @Param("uid") Long uid, @Param("keywords") String keywords);
+
+    Article getArticleById(Long aid);
+
+    void pvIncrement(Long aid);
 }
